@@ -19,7 +19,7 @@ async function fetchRandomNews(){
 searchButton.addEventListener("click", async () =>{
     const query = searchField.value.trim();
     if(query !== ""){
-        try{
+        try{ 
             const articles = await fetchNewsquery(query);
             displayBlogs(articles);
         } catch(error){
