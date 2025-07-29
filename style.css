@@ -1,109 +1,164 @@
-*{
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
-}
-body{
-    position: relative;
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
-/* global Css */
-.obj-width{
-    max-width: 1200px;
-    margin: auto;
+body {
+  background-color: #f4f7f9;
 }
-nav{
-    background-color: #2d4c50;
-    box-shadow: 0 7px 7px rgba(0, 0, 0, 0.3);
+
+/* Utility */
+.obj-width {
+  max-width: 1200px;
+  margin: auto;
+  padding: 0 15px;
 }
+
+/* Navbar */
+nav {
+  background-color: #2d4c50;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  padding: 1rem 0;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
 .navbar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 1.3rem 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
 }
 
 .navbar .logo {
-    color: #fff;
-    text-decoration: none;
-    letter-spacing: 2px;
-    font-size: 2.2rem ;
-
+  color: #fff;
+  text-decoration: none;
+  letter-spacing: 2px;
+  font-size: 2.5rem;
+  font-weight: bold;
 }
 
-#search-input{
-    max-width: 400px;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 5px;
-    font-size: 18px;
-    color: #333;
+.search-box {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 10px;
 }
 
-#search-button{
-    padding: 10px 20px;
-    background-color: #138065;
-    color: #fff;
-    border: none;
-    font-size: 18px;
-    cursor: pointer;
-    border-radius: 5px;
-    margin-left: 10px;
+#search-input {
+  max-width: 400px;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  color: #333;
+  flex: 1;
 }
 
-#blog-container{
-    padding: 3rem 0;
-    display: flex;
-    justify-content: flex-start;
-    align-items: flex-start;
-    flex-wrap: wrap;  
-}  
+#search-button {
+  padding: 10px 20px;
+  background-color: #138065;
+  color: #fff;
+  border: none;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 8px;
+  transition: background 0.3s ease;
+}
 
+#search-button:hover {
+  background-color: #0d5c4b;
+}
+
+/* Blog Container */
+#blog-container {
+  padding: 3rem 0;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+/* Blog Card */
 .blog-card {
-    width: 280px;
-    border: 1px solid #2d4c50;
-    border-radius: 10px;
-    cursor: pointer;
-    padding: 1rem;
-    margin: 10px;
+  width: 280px;
+  border-radius: 12px;
+  background-color: #ffffff;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  cursor: pointer;
+  padding: 1rem;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .blog-card:hover {
-    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.1);
+  transform: translateY(-8px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
 }
 
-.blog-card img{
-    width: 100%;
-    height: 200px;
-    object-fit: cover;
-    border-radius: 5px;
-    margin-bottom: 1rem;
+.blog-card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 1rem;
 }
-
 
 .blog-card h2 {
-    color: #141414;
-    font-size: 1.7rem;
-    font-weight: 500;
+  color: #141414;
+  font-size: 1.4rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
 }
 
 .blog-card p {
-    font-size: 1.2rem;
-    padding: 0.7rem;
+  font-size: 1rem;
+  color: #444;
+  line-height: 1.5;
 }
 
-@media(max-width: 500px){
-    nav {
-        padding: 0 20px;
-    }
-    .navbar .logo{
-        font-size: 1.8rem;
-    }
-    #search-input {
-        width: 150px;
-        padding: 10px 10px;
-    }
-    .blog-card {
-        width: 100%;
-    }
+/* Responsive Design */
+@media(max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .search-box {
+    width: 100%;
+    justify-content: flex-start;
+  }
+
+  #search-input {
+    width: 100%;
+  }
+
+  #blog-container {
+    justify-content: center;
+  }
+
+  .blog-card {
+    width: 100%;
+    max-width: 100%;
+  }
+}
+
+@media(max-width: 480px) {
+  .navbar .logo {
+    font-size: 2rem;
+  }
+
+  #search-button {
+    font-size: 14px;
+  }
+
+  .blog-card h2 {
+    font-size: 1.2rem;
+  }
+
+  .blog-card p {
+    font-size: 0.95rem;
+  }
 }
